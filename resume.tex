@@ -1,0 +1,301 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RIT Resume Template v1.0
+% Author: Abhay Bhandarkar
+% Ramaiah Institute of Technology, Bangalore
+% This template uses a modern look and RIT-specific details. It maintains a one‑column
+% layout, making it ideal for incorporating many details while keeping it to one page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt]{article}
+
+%-------------------- Package Imports -------------------------
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{array}
+
+%-------------------- Color Definitions -----------------------
+\definecolor{ritblue}{RGB}{0,82,156}     % RIT Blue
+\definecolor{ritgray}{RGB}{80,80,80}       % Secondary text color
+
+%-------------------- Page Layout -----------------------------
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear header/footer
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.08pt}
+
+%-------------------- Hyperlink Setup -------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ritblue,
+    filecolor=ritblue,
+    urlcolor=ritblue,
+}
+
+%-------------------- Custom Box Settings ---------------------
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=ritblue,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+%-------------------- URL Style -------------------------------
+\urlstyle{same}
+
+%-------------------- Text Alignment --------------------------
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------- Section Formatting ----------------------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{ritblue}\titlerule \vspace{-7pt}]
+
+%-------------------- Custom Commands -------------------------
+\newcommand{\resumeItem}[2]{%
+  \item{\textbf{#1}\hspace{0.5mm}#2 \vspace{-0.5mm}}%
+}
+
+\newcommand{\resumePOR}[3]{%
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{%
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{%
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}[colback=gray!20,colframe=ritblue,boxrule=1pt,arc=0pt,outer arc=0pt]
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+%-------------------- Icon & Font Commands ---------------------
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options (choose one that best suits your style)
+\newcommand{\headerfonti}{\fontfamily{cmss}\selectfont} % Sans Serif
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont}  % Times-like
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino
+
+%-------------------- Personal Information --------------------
+\newcommand{\name}{Your Full Name} % Your Name
+\newcommand{\course}{Bachelor of Technology in [Your Branch]} % Your Course
+\newcommand{\roll}{XXXXXX} % Your Roll No.
+\newcommand{\phone}{XXXXXXXXXX} % Your Phone Number
+\newcommand{\emaila}{your.email@domain.com} % Email 1
+\newcommand{\emailb}{your.email@domain.com} % Email 2
+\newcommand{\github}{yourgithubusername} % Github
+\newcommand{\website}{https://yourwebsite.com/} % Website
+\newcommand{\linkedin}{yourlinkedinprofile} % LinkedIn
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+
+%----------HEADING-----------------
+\parbox{2.35cm}{%
+  \includegraphics[width=1.5cm,clip]{rit_logo.png}
+}
+\parbox{\dimexpr\linewidth-2.8cm\relax}{%
+  \begin{tabularx}{\linewidth}{L r}
+    \textbf{\LARGE \name} & {\faPhone~+91-\phone} \\
+    \course & {\faEnvelope~\href{mailto:\emailb}{\emailb}} \\
+    Your Department & {\faLinkedin~\href{https://www.linkedin.com/in/\linkedin}{linkedin.com/in/\linkedin}} \\
+    Ramaiah Institute of Technology, Bangalore
+    & {\faGithub~\href{https://github.com/\github}{github.com/\github}} \\
+  \end{tabularx}
+}
+\vspace{-2mm}
+
+%----------EDUCATION-----------------
+\section{\textbf{Education}}
+\vspace{1mm}
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}p{8cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2.5cm}|}
+  \hline
+  \textbf{Degree/Certificate} & \textbf{Institute/Board} & \textbf{CGPA/Percentage} & \textbf{Year} \\
+  \hline
+  B.Tech., [Branch] & Ramaiah Institute of Technology, Bangalore & [CGPA] & [Month Year] \\ 
+  \hline
+  Senior Secondary & [Institute/Board] & [Percentage] & [Month Year] \\
+  \hline
+  Secondary & [Institute/Board] & [Percentage] & [Month Year] \\
+  \hline
+\end{tabularx}
+\vspace{-4mm}
+
+%----------EXPERIENCE-----------------
+\section{\textbf{Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumeSubheading
+    {Company A [\href{https://www.companya.com}{\faBuilding}]}{City, Country}
+    {Job Title A}{Month Year -- Month Year}
+    \resumeItemListStart
+      \item Developed [specific achievement] achieving [specific metric] in [specific area].
+      \item Implemented [technology/method], enhancing [aspect] by [percentage].
+      \item Analyzed [data/task], extracting key insights.
+      \item Presented findings at [event/conference], receiving accolades.
+    \resumeItemListEnd
+\resumeSubheading
+    {Company B [\href{https://www.companyb.com}{\faBuilding}]}{Remote}
+    {Job Title B}{Month Year -- Month Year}
+    \resumeItemListStart
+      \item Engineered a [system/model] that improved [metric] by [percentage].
+      \item Developed [tool/method] to increase [efficiency/effectiveness] by [percentage].
+      \item Implemented [process/system] reducing [cost/time] by [percentage].
+      \item Conducted [analysis/test] to validate [aspect] with significant results.
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%----------PROJECTS-----------------
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+    {Project A: [Brief Description]}
+    {Tools: [List of tools/technologies used]}
+    {Month Year -- Month Year}
+    {{}[\href{https://github.com/\github/project-a}{\textcolor{ritblue}{\faGithub}}]}
+\resumeItemListStart
+    \item Developed [feature/system] for [purpose].
+    \item Implemented [technology] achieving [result/outcome].
+    \item Created [component] ensuring [benefit].
+    \item Applied [method] to analyze [aspect].
+\resumeItemListEnd
+
+\resumeProject
+    {Project B: [Brief Description]}
+    {Tools: [List of tools/technologies used]}
+    {Month Year}
+    {{}[\href{https://github.com/\github/project-b}{\textcolor{ritblue}{\faGithub}}]}
+\resumeItemListStart
+    \item Designed [component/tool] for [function].
+    \item Integrated [technology] to enhance [feature].
+    \item Evaluated [process] leading to [result].
+    \item Collaborated with [team/individual] on [aspect].
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-8mm}
+
+%----------SKILLS-----------------
+\section{\textbf{Skills}}
+\vspace{-0.4mm}
+\resumeHeadingSkillStart
+\resumeSubItem{Programming Languages}{: C, C++, Java, Python, JavaScript}
+\resumeSubItem{Web Technologies}{: HTML5, CSS3, Node.js, React, Angular}
+\resumeSubItem{Tools}{: Git, Docker, Kubernetes, AWS, Linux}
+\resumeSubItem{Concepts}{: Data Structures, Algorithms, ML, AI}
+\resumeHeadingSkillEnd
+\vspace{-2mm}
+
+%----------CERTIFICATIONS-----------------
+\section{\textbf{Certifications}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumePOR
+    {Issuing Organization 1} % Certification Name
+    {, \href{https://www.certificationlink.com}{Certification 1}} % Issuer
+    {Month Year} % Duration
+\resumePOR
+    {Issuing Organization 2} % Certification Name
+    {, \href{https://www.certificationlink.com}{Certification 2}} % Issuer
+    {Month Year} % Duration
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%----------ACHIEVEMENTS-----------------
+\section{\textbf{Achievements}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+\resumePOR{}{\href{https://www.achievementlink.com}{Achievement 1}}{}
+\resumePOR{}{\href{https://www.achievementlink.com}{Achievement 2}}{}
+\resumePOR{}{\href{https://www.achievementlink.com}{Achievement 3}}{}
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%----------POSITIONS OF RESPONSIBILITY-----------------
+\section{\textbf{Positions of Responsibility}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+    \resumePOR{\href{https://www.positionlink.com}{Position A}, } % Position
+    {Club/ Society/ Cell, RIT} % Club, Event
+    {Month Year} % Tenure Period
+
+    \resumePOR{\href{https://www.positionlink.com}{Position B}, } % Position
+    {Club/ Society/ Cell, RIT} % Club, Event
+    {Month Year} % Tenure Period
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+\end{document}
